@@ -1,0 +1,40 @@
+# Street Info Hub — Road Classifier Training Config
+
+model:
+  architecture: mobilenet_v3_small
+  pretrained: true
+  num_classes: 2
+  classes:
+    0: not_road
+    1: road
+
+training:
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler: one_cycle
+
+data:
+  image_size: 224
+  train_split: 0.85
+  augmentations:
+    random_resized_crop: true
+    horizontal_flip: true
+    color_jitter:
+      brightness: 0.3
+      contrast: 0.3
+      saturation: 0.2
+    rotation: 10
+
+thresholds:
+  road_confidence: 0.55   # Below this → reject as "no road detected"
+  low_confidence:  0.40   # Below this → flag as "low confidence" result
+
+export:
+  format: onnx
+  opset: 17
+  input_name: input
+  output_name: output
+  dynamic_batch: true

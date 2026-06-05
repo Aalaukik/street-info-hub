@@ -1,0 +1,26 @@
+# Street Info Hub — YOLOv8 Damage Detection Dataset Config
+# Place this file at: ml/configs/yolov8_damage.yaml
+# Update `path` to your actual dataset location before training.
+
+path: /content/road_damage_dataset   # absolute path to dataset root
+
+train: images/train
+val:   images/val
+test:  images/test
+
+# Number of classes
+nc: 6
+
+# Class names — ORDER MUST MATCH ai_service.py DAMAGE_CLASSES list
+names:
+  0: pothole
+  1: longitudinal_crack
+  2: transverse_crack
+  3: alligator_crack
+  4: rutting
+  5: edge_break
+
+# Optional: class weights to handle imbalanced data
+# Potholes are often over-represented in Indian datasets
+# Uncomment and tune after first training run:
+# class_weights: [1.0, 1.2, 1.2, 1.1, 1.5, 1.5]

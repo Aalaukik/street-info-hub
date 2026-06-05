@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#f97f09"/>
+  <!-- Road surface -->
+  <path d="M6 24 L14 8 L18 8 L26 24 Z" fill="#1a2332" opacity="0.9"/>
+  <!-- Road centre dashes -->
+  <rect x="15" y="10" width="2" height="3" rx="1" fill="#f97f09" opacity="0.9"/>
+  <rect x="15" y="15" width="2" height="3" rx="1" fill="#f97f09" opacity="0.9"/>
+  <rect x="15" y="20" width="2" height="3" rx="1" fill="#f97f09" opacity="0.9"/>
+  <!-- Pothole indicator -->
+  <circle cx="11" cy="21" r="2" fill="#ef4444" opacity="0.85"/>
+</svg>
